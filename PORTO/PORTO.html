@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Aditya Saputra, Informatics Student exploring UI Design, System Analysis, and Digital Product Development.">
+    <title>Aditya Saputra — Informatics Student & UI Enthusiast</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white dark:bg-zinc-950 transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-12 h-12 border-4 border-gray-200 dark:border-gray-800 border-t-accent rounded-full animate-spin"></div>
+            <p class="text-sm font-medium text-gray-500 tracking-widest uppercase">Loading Portfolio</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent z-50 w-0"></div>
+
+    <!-- Background Orbs -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-accent/10 dark:bg-accent/20 rounded-full blur-[120px] animate-float"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[35vw] h-[35vw] bg-purple-500/10 dark:bg-purple-500/20 rounded-full blur-[120px] animate-float" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="#home" class="text-xl font-display font-bold tracking-tight flex items-center gap-2 magnetic-btn">
+                Aditya Saputra
+            </a>
+            
+            <div class="hidden md:flex items-center gap-1 glass rounded-full px-2 py-2">
+                <a href="#about" class="px-4 py-1.5 rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors">About</a>
+                <a href="#projects" class="px-4 py-1.5 rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Projects</a>
+                <a href="#journey" class="px-4 py-1.5 rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Journey</a>
+                <a href="#contact" class="px-4 py-1.5 rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="Toggle color theme" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+                    <i class="fas fa-sun text-sm hidden dark:block"></i>
+                    <i class="fas fa-moon text-sm block dark:hidden"></i>
+                </button>
+                <button id="menu-btn" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden w-10 h-10 glass rounded-full flex items-center justify-center">
+                    <i class="fas fa-bars text-sm"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white dark:bg-zinc-950 hidden flex-col items-center justify-center gap-8 text-2xl font-display font-bold">
+        <button id="menu-close" aria-label="Close navigation menu" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center"><i class="fas fa-times"></i></button>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#journey" class="mobile-link">Journey</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main class="relative z-10">
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <!-- Left Content -->
+                <div class="flex flex-col gap-6 reveal">
+                    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 w-fit text-sm font-medium text-gray-600 dark:text-gray-300">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                        </span>
+                        Open to UI/UX Internship
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1]">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500 animated-gradient">Adit.</span>
+                    </h1>
+                    
+                    <h2 class="text-xl md:text-2xl font-display font-medium text-gray-600 dark:text-gray-300 max-w-xl">
+                        Informatics Student exploring UI Design, System Analysis, and Digital Product Development.
+                    </h2>
+                    
+                    <p class="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed">
+                        I am an Informatics Engineering student at Jakarta Global University with a strong interest in information technology, operating systems, system administration, databases, and application and web development. Throughout my studies, I have actively participated in both academic and organizational activities that have strengthened my technical expertise, leadership, communication, and teamwork skills.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="#projects" class="magnetic-btn px-6 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent-dark transition-colors flex items-center gap-2">
+                            View Projects <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="assets/CV_ADITYA%20SAPUTRA.pdf" download class="magnetic-btn px-6 py-3 glass rounded-full font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center gap-2">
+                            Download CV <i class="fas fa-download text-xs"></i>
+                        </a>
+                        <a href="https://github.com/adityaasaputraa" target="_blank" rel="noopener noreferrer" aria-label="Visit Aditya's GitHub profile" class="magnetic-btn w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/Aditya-Saputra" target="_blank" rel="noopener noreferrer" aria-label="Visit Aditya's LinkedIn profile" class="magnetic-btn w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Content: Profile Photo Placeholder -->
+                <div class="relative reveal">
+                    <div class="relative w-full max-w-md mx-auto aspect-[4/5] rounded-[2rem] glass p-4 overflow-hidden group">
+                        <img src="assets/profile.png" alt="Foto Profil Aditya Saputra" class="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-[1.5rem]">
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-5 -right-5 w-20 h-20 glass rounded-2xl flex items-center justify-center animate-float">
+                        <i class="fas fa-laptop-code text-accent text-xl"></i>
+                    </div>
+                    <div class="absolute -bottom-5 -left-5 w-24 h-24 glass rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                        <i class="fas fa-pen-nib text-purple-500 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 animate-bounce">
+                <span class="text-xs uppercase tracking-widest">Scroll</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="reveal">
+                        <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">01. About Me</p>
+                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">A continuous learner shaping the future of digital products.</h2>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                            <p>My journey in Informatics isn't just about writing code; it's about understanding how systems work and how people interact with them. I am deeply interested in the intersection of UI Design, System Analysis, and Multimedia.</p>
+                            <p>I believe that great digital products are born from a mix of structured logic and creative expression. I approach problems with a curious mindset, always looking for elegant solutions that balance functionality with beautiful design.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal grid grid-cols-2 gap-4">
+                        <!-- Interests Timeline -->
+                        <div class="col-span-2 mb-4">
+                            <h3 class="text-xl font-display font-bold mb-6">Current Focus</h3>
+                        </div>
+                        <div class="space-y-6 col-span-2">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl glass flex items-center justify-center text-accent"><i class="fas fa-graduation-cap"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Informatics Student</h4>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Building a strong foundation in computer science.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl glass flex items-center justify-center text-accent"><i class="fas fa-pencil-ruler"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg">UI Design & Multimedia</h4>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Crafting visually appealing and functional interfaces.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl glass flex items-center justify-center text-accent"><i class="fas fa-project-diagram"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg">System Analysis & Product Dev</h4>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">Structuring complex systems into understandable flows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Values -->
+                        <div class="col-span-2 mt-8">
+                            <h3 class="text-xl font-display font-bold mb-6">Personal Values</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-puzzle-piece text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Problem Solver</p>
+                                </div>
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-lightbulb text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Creative Thinker</p>
+                                </div>
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-bolt text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Fast Learner</p>
+                                </div>
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-users text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Collaborative</p>
+                                </div>
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-search text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Curious</p>
+                                </div>
+                                <div class="glass rounded-xl p-4 text-center card-hover">
+                                    <i class="fas fa-seedling text-accent mb-2"></i>
+                                    <p class="font-medium text-sm">Continuous Learning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY TIMELINE -->
+        <section id="journey" class="py-24 md:py-32 relative">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">02. My Journey</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">The road so far</h2>
+                </div>
+
+                <div class="relative">
+                    <!-- 2023 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 mb-12 reveal">
+                        <div class="hidden md:block absolute left-1/2 top-8 -bottom-20 -translate-x-1/2 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+                        <div class="md:w-1/2 md:text-right md:pr-12">
+                            <div class="glass rounded-2xl p-6 card-hover inline-block w-full">
+                                <h3 class="text-2xl font-display font-bold text-accent mb-2">2023</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Graduated from SMK Prisma Depok, majoring in Computer and Network Engineering.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 mb-12 reveal">
+                        <div class="hidden md:block absolute left-1/2 top-8 -bottom-20 -translate-x-1/2 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <h3 class="text-2xl font-display font-bold text-accent mb-2">2024</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Studying Informatics Engineering at Jakarta Global University and learning the fundamentals of programming.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 mb-12 reveal">
+                        <div class="hidden md:block absolute left-1/2 top-8 -bottom-20 -translate-x-1/2 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+                        <div class="md:w-1/2 md:text-right md:pr-12">
+                            <div class="glass rounded-2xl p-6 card-hover inline-block w-full">
+                                <h3 class="text-2xl font-display font-bold text-accent mb-2">2025</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Continued my studies in Informatics Engineering and gained hands-on experience with various programming languages and frameworks.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="relative flex flex-col md:flex-row gap-8 reveal">
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <h3 class="text-2xl font-display font-bold text-accent mb-2">2026</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Building portfolio, learning UI Design, and developing interactive digital products. Seeking internship opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">03. Skills</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">Tools & Technologies</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Design -->
+                    <div class="glass rounded-2xl p-6 reveal card-hover">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-palette"></i></div>
+                            <h3 class="font-display font-bold text-xl">Design</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Canva</span><span class="text-gray-500">Advanced</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development -->
+                    <div class="glass rounded-2xl p-6 reveal card-hover" style="transition-delay: 0.1s;">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-code"></i></div>
+                            <h3 class="font-display font-bold text-xl">Development</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>HTML</span><span class="text-gray-500">Intermediate</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="80%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>CSS</span><span class="text-gray-500">Intermediate</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="75%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Python</span><span class="text-gray-500">Intermediate</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="70%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Analysis -->
+                    <div class="glass rounded-2xl p-6 reveal card-hover" style="transition-delay: 0.2s;">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-project-diagram"></i></div>
+                            <h3 class="font-display font-bold text-xl">Sys. Analysis</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>DFD</span><span class="text-gray-500">Advanced</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="85%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Flowchart</span><span class="text-gray-500">Advanced</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="90%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Yourdon-DeMarco</span><span class="text-gray-500">Proficient</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="80%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="glass rounded-2xl p-6 reveal card-hover" style="transition-delay: 0.3s;">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-toolbox"></i></div>
+                            <h3 class="font-display font-bold text-xl">Tools</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Git & GitHub</span><span class="text-gray-500">Intermediate</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="75%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>VS Code</span><span class="text-gray-500">Advanced</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="90%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1"><span>Draw.io</span><span class="text-gray-500">Proficient</span></div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="skill-bar-fill bg-accent h-2 rounded-full" data-width="85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section id="projects" class="py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 reveal">
+                    <div>
+                        <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">04. Featured Projects</p>
+                        <h2 class="text-4xl md:text-5xl font-display font-bold">Things I've built & designed</h2>
+                    </div>
+                    <div class="flex gap-2 flex-wrap">
+                        <button class="filter-btn px-4 py-2 glass rounded-full text-sm font-medium active" data-filter="all">All</button>
+                        <button class="filter-btn px-4 py-2 glass rounded-full text-sm font-medium" data-filter="web">Web Dev</button>
+                        <button class="filter-btn px-4 py-2 glass rounded-full text-sm font-medium" data-filter="design">Design</button>
+                        <button class="filter-btn px-4 py-2 glass rounded-full text-sm font-medium" data-filter="analysis">Sys. Analysis</button>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="mb-10 reveal">
+                    <div class="relative max-w-md">
+                        <input type="text" id="project-search" placeholder="Search projects..." class="w-full glass rounded-full px-6 py-3 pl-12 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="web" data-title="Personal Portfolio Website">
+                        <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center relative overflow-hidden">
+                            <img src="assets/porto.png" alt="Personal Portfolio Website" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Web Development</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">Personal Portfolio</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Designed and developed a responsive personal portfolio website.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="Personal Portfolio Website"
+                                data-category="Web Development"
+                                data-overview="Designed and developed a responsive personal portfolio website to showcase projects, skills, and learning journey."
+                                data-contribution="UI/UX Design, Frontend Development, Responsive Implementation"
+                                data-tools="HTML, Tailwind CSS, Vanilla JS"
+                                data-timeline="2026"
+                                data-challenges="Creating a premium feel with minimal tools while ensuring fast load times and smooth animations."
+                                data-solutions="Utilized CSS variables, IntersectionObserver for scroll animations, and optimized assets."
+                                data-reflection="This project solidified my understanding of how design choices impact user perception and interaction."
+                                data-gallery="assets/porto1.png,assets/porto2.png,assets/porto3.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="web" data-title="Volosh Sport Footwear" style="transition-delay: 0.1s;">
+                        <div class="aspect-video bg-gradient-to-br from-blue-100 to-purple-200 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
+                             <img src="assets/volosh.png" alt="Volosh Sport Footwear" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Web Development</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">Volosh Footwear</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Premium footwear company profile and product showcase.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="Volosh Sport Footwear"
+                                data-category="Web Development"
+                                data-overview="Premium footwear company profile and product showcase website featuring responsive layouts, interactive product presentation, and modern user experience."
+                                data-contribution="Defined project concept, Directed visual design, Used AI to accelerate initial development, Refined layouts, Improved user experience, Tested responsiveness"
+                                data-tools="HTML, CSS, JavaScript, AI Tools"
+                                data-timeline="2026"
+                                data-challenges="Balancing aesthetic appeal with performance across various devices."
+                                data-solutions="Implemented lazy loading and utilized AI to rapidly prototype layouts, which were then manually refined."
+                                data-reflection="Learned how to direct AI tools effectively rather than just accepting their output, maintaining creative control."
+                                data-gallery="assets/volosh1.png,assets/volosh2.png,assets/volosh3.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="web" data-title="Cyber Strike: Neon Uprising" style="transition-delay: 0.2s;">
+                        <div class="aspect-video bg-gradient-to-br from-green-100 to-teal-200 dark:from-green-900 dark:to-teal-900 flex items-center justify-center">
+                            <img src="assets/cyber.png" alt="Cyber Strike: Neon Uprising" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Interactive Media</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">Cyber Strike</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">HTML5 browser game featuring cyberpunk visuals.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="Cyber Strike: Neon Uprising"
+                                data-category="Interactive Media"
+                                data-overview="HTML5 browser game featuring interactive gameplay, HUD interface, animations, scoring system, and immersive cyberpunk visuals."
+                                data-contribution="Designed gameplay concept, Directed interface design, Used AI-assisted development, Performed testing, Improved overall experience"
+                                data-tools="HTML5 Canvas, JavaScript, AI Tools"
+                                data-timeline="2026"
+                                data-challenges="Optimizing game loop and rendering for smooth performance in browsers."
+                                data-solutions="Used requestAnimationFrame and offscreen canvas techniques suggested by AI, then manually tweaked logic."
+                                data-reflection="Showed me the importance of user testing in interactive design; what is intuitive to me may not be to a player."
+                                data-gallery="assets/cyber.png,assets/cyber1.png,assets/cyber2.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="analysis" data-title="Library System Analysis" style="transition-delay: 0.3s;">
+                        <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-200 dark:from-orange-900 dark:to-red-900 flex items-center justify-center">
+                            <img src="assets/library.png" alt="Library System" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">System Analysis</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">Library System</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Complete system analysis using Yourdon-DeMarco.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="Library System Analysis"
+                                data-category="System Analysis"
+                                data-overview="Performed complete system analysis for a Library platform using the Yourdon-DeMarco methodology."
+                                data-contribution="Requirement Gathering, Diagram Modeling, System Structuring"
+                                data-tools="Draw.io, Yourdon-DeMarco Notation"
+                                data-timeline="2026"
+                                data-challenges="Translating complex user requirements into structured, logical data flows."
+                                data-solutions="Iterative refinement of diagrams, starting from Context Diagram down to Level 2 DFDs."
+                                data-reflection="System analysis is crucial; it bridges the gap between client needs and technical implementation."
+                                data-gallery="assets/library1.png,assets/library2.png,assets/library3.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="design" data-title="HIMATIF Learn Space" style="transition-delay: 0.4s;">
+                        <div class="aspect-video bg-gradient-to-br from-pink-100 to-rose-200 dark:from-pink-900 dark:to-rose-900 flex items-center justify-center">
+                            <img src="assets/hls.png" alt="HIMATIF Learn Space" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Design</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">HIMATIF Learn Space</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Digital publication assets for student org.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="HIMATIF Learn Space"
+                                data-category="Design"
+                                data-overview="Designed promotional materials and digital publication assets for student organization activities."
+                                data-contribution="Concept Design, Layout Creation, Visual Branding"
+                                data-tools="Canva"
+                                data-timeline="2025"
+                                data-challenges="Maintaining brand consistency across multiple digital assets."
+                                data-solutions="Created a modular template system for quick and consistent deployment."
+                                data-reflection="Improved my understanding of visual hierarchy and typography in digital media."
+                                data-gallery="assets/hls1.png,assets/hls2.png,assets/hls3.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-item glass rounded-2xl overflow-hidden card-hover cursor-pointer reveal" data-category="design" data-title="Katsu Photo Editor Software" style="transition-delay: 0.5s;">
+                        <div class="aspect-video bg-gradient-to-br from-yellow-100 to-amber-200 dark:from-yellow-900 dark:to-amber-900 flex items-center justify-center">
+                            <img src="assets/katsu.png" alt="Katsu Photo Editor" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Desktop Application</span>
+                            <h3 class="text-xl font-display font-bold mt-2 mb-2">Katsu Photo Editor</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Desktop-based image editing application developed using Python with essential photo manipulation features and an intuitive user interface.</p>
+                            <button class="open-project text-sm font-medium flex items-center gap-2 text-accent" 
+                                data-title="Katsu Photo Editor Software"
+                                data-category="Desktop Application"
+                                data-overview="Katsu Photo Editor is a desktop-based image editing application developed in Python to provide essential photo manipulation tools. The application allows users to edit images through a simple and user-friendly interface, making basic photo editing accessible for everyday use."
+                                data-contribution="Designed the user interface, developed the application architecture, implemented image processing features, integrated editing tools, tested functionality, and optimized user interaction."
+                                data-tools="Python, Tkinter, Pillow (PIL), OpenCV"
+                                data-timeline="2024"
+                                data-challenges="Timing the animations to match the educational script perfectly."
+                                data-solutions="Implemented efficient image processing workflows, separated editing logic from the user interface, optimized image preview updates, and refined the layout through iterative usability testing."
+                                data-reflection="This project strengthened my understanding of desktop application development, image processing, software architecture, and user interface design. It also improved my ability to translate user requirements into practical software features."
+                                data-gallery="assets/katsu1.png,assets/katsu2.png,assets/katsu3.png"
+                                data-github="#"
+                                data-demo="#"
+                            >
+                                View More <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY PROCESS -->
+        <section id="process" class="py-24 md:py-32 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">05. My Process</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">How I bring ideas to life</h2>
+                </div>
+
+                    <div class="relative overflow-visible py-4 group">
+                        <button id="slide-left" aria-label="Previous process steps" class="absolute -left-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white dark:bg-zinc-800 text-gray-800 dark:text-white rounded-full shadow-lg flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="slide-right" aria-label="Next process steps" class="absolute -right-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white dark:bg-zinc-800 text-gray-800 dark:text-white rounded-full shadow-lg flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="overflow-x-auto custom-scroll relative">
+                            <div id="process-track" class="process-track gap-6 min-w-max">
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-search text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Discover</h3>
+                                    <p class="text-sm text-gray-500">Understanding the problem space.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-microscope text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Research</h3>
+                                    <p class="text-sm text-gray-500">Gathering data and user needs.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-clipboard-list text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Planning</h3>
+                                    <p class="text-sm text-gray-500">Structuring the solution.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-drafting-compass text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Wireframe</h3>
+                                    <p class="text-sm text-gray-500">Low-fidelity layouts.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-paint-brush text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Design</h3>
+                                    <p class="text-sm text-gray-500">High-fidelity visuals.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-code text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Development</h3>
+                                    <p class="text-sm text-gray-500">Building the product.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-vial text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Testing</h3>
+                                    <p class="text-sm text-gray-500">Ensuring quality.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover">
+                                <i class="fas fa-sync text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Iteration</h3>
+                                    <p class="text-sm text-gray-500">Refining based on feedback.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                        <div class="process-step reveal">
+                            <div class="glass rounded-2xl p-6 w-64 h-48 flex flex-col justify-between card-hover border-accent border-2">
+                                <i class="fas fa-rocket text-accent text-2xl"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Final Product</h3>
+                                    <p class="text-sm text-gray-500">Launch and delivery.</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2 text-accent"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENTLY LEARNING -->
+        <section id="learning" class="py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">06. Currently Learning</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">Growing my skillset</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal">
+                        <i class="fas fa-cubes text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">Design System</p>
+                    </div>
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal" style="transition-delay: 0.1s;">
+                        <i class="fas fa-universal-access text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">Accessibility</p>
+                    </div>
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal" style="transition-delay: 0.2s;">
+                        <i class="fas fa-mobile-alt text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">Responsive Design</p>
+                    </div>
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal" style="transition-delay: 0.3s;">
+                        <i class="fas fa-exchange-alt text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">Interaction Design</p>
+                    </div>
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal" style="transition-delay: 0.4s;">
+                        <i class="fas fa-magic text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">UI Animation</p>
+                    </div>
+                    <div class="tilt-card glass rounded-2xl p-6 flex flex-col items-center justify-center aspect-square card-hover reveal" style="transition-delay: 0.5s;">
+                        <i class="fas fa-robot text-accent text-3xl mb-3"></i>
+                        <p class="font-display font-bold text-sm text-center">AI-assisted Workflow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORGANIZATION -->
+        <section id="organization" class="py-24 md:py-32 relative">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">07. Organization</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">Leadership & Teamwork</h2>
+                </div>
+
+                <div class="glass rounded-3xl p-8 md:p-12 reveal relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row items-start gap-6 mb-6">
+                            <!-- Org Image Placeholder -->
+                            <div class="w-20 h-20 rounded-2xl glass p-3 shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center flex-shrink-0">
+                                <img
+                                    src="assets/HIMATIF.png"
+                                    alt="Logo HIMATIF"
+                                    class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-display font-bold">HIMATIF</h3>
+                                <p class="text-accent font-medium">Vice Head of Research and Technology Department</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold text-lg mb-4">Responsibilities:</h4>
+                            <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-accent mt-1"></i> Supporting department programs and initiatives.</li>
+                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-accent mt-1"></i> Managing digital initiatives for the organization.</li>
+                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-accent mt-1"></i> Designing publication materials and digital assets.</li>
+                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-accent mt-1"></i> Collaborating with committee members to achieve goals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- CERTIFICATES -->
+        <section id="certificates" class="py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">08. Certificates</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">Achievements & Learning</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+
+                    <!-- Sertifikat UTAR -->
+                    <div class="reveal group cursor-pointer" role="button" tabindex="0" aria-label="Open UTAR certificate"
+                        onclick="openLightbox('assets/sertifutar.jpg')">
+
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden glass card-hover">
+                            <img
+                                src="assets/sertifutar.jpg"
+                                alt="UTAR Certificate"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="font-bold">UTAR Certificate</h3>
+                            <p class="text-sm text-gray-500">
+                                Certificate of Participation
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Sertifikat Intel -->
+                    <div class="reveal group cursor-pointer" role="button" tabindex="0" aria-label="Open Intel certificate"
+                        onclick="openLightbox('assets/sertifintel.jpg')"
+                        style="transition-delay:0.1s;">
+
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden glass card-hover">
+                            <img
+                                src="assets/sertifintel.jpg"
+                                alt="Intel Certificate"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="font-bold">Intel Certificate</h3>
+                            <p class="text-sm text-gray-500">
+                                Certificate of Participation
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Sertifikat Zenith -->
+                    <div class="reveal group cursor-pointer" role="button" tabindex="0" aria-label="Open Zenith certificate"
+                        onclick="openLightbox('assets/sertifzenith.jpg')"
+                        style="transition-delay:0.2s;">
+
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden glass card-hover">
+                            <img
+                                src="assets/sertifzenith.jpg"
+                                alt="Zenith Certificate"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="font-bold">Zenith Certificate</h3>
+                            <p class="text-sm text-gray-500">
+                                Certificate of Participation
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT -->
+        <section id="contact" class="pt-24 pb-16 md:pt-32 md:pb-20 relative">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-sm font-bold text-accent uppercase tracking-widest mb-4">09. Contact</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold">Let's build something great</h2>
+                    <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-xl mx-auto">I'm currently looking for Internship opportunities. Feel free to reach out!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Email -->
+                    <div class="glass rounded-2xl p-8 flex items-center justify-between reveal card-hover">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-envelope text-lg"></i></div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="font-medium">adityasaputraa0269@gmail.com</p>
+                            </div>
+                        </div>
+                        <button id="copy-email" class="px-4 py-2 glass rounded-full text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <i class="fas fa-copy text-xs"></i> <span>Copy</span>
+                        </button>
+                    </div>
+
+                    <!-- Download CV -->
+                    <a href="assets/CV_ADITYA%20SAPUTRA.pdf" download class="glass rounded-2xl p-8 flex items-center justify-between reveal card-hover" style="transition-delay: 0.1s;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent"><i class="fas fa-file-pdf text-lg"></i></div>
+                            <div>
+                                <p class="text-sm text-gray-500">Resume</p>
+                                <p class="font-medium">Download CV</p>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 glass rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-download text-xs"></i> <span>PDF</span>
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/adityaasaputraa" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-8 flex items-center justify-between reveal card-hover" style="transition-delay: 0.2s;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent"><i class="fab fa-github text-lg"></i></div>
+                            <div>
+                                <p class="text-sm text-gray-500">GitHub</p>
+                                <p class="font-medium">@adityaasaputraa</p>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 glass rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-external-link-alt text-xs"></i> <span>Visit</span>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/aditya-saputra" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-8 flex items-center justify-between reveal card-hover" style="transition-delay: 0.3s;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent"><i class="fab fa-linkedin-in text-lg"></i></div>
+                            <div>
+                                <p class="text-sm text-gray-500">LinkedIn</p>
+                                <p class="font-medium">Aditya Saputra</p>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 glass rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-external-link-alt text-xs"></i> <span>Visit</span>
+                        </div>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/aditystraa" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-8 flex items-center justify-between reveal card-hover md:col-span-2" style="transition-delay: 0.4s;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent"><i class="fab fa-instagram text-lg"></i></div>
+                            <div>
+                                <p class="text-sm text-gray-500">Instagram</p>
+                                <p class="font-medium">@aditystraa</p>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 glass rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-external-link-alt text-xs"></i> <span>Visit</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="font-display font-bold">Aditya Saputra</p>
+                <p class="text-sm text-gray-500 mt-1">Susah susah nyari bug ternyata cuma typo.</p>
+            </div>
+            <button id="back-to-top" aria-label="Back to top" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <i class="fas fa-arrow-up text-sm"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[90] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="glass rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto custom-scroll relative">
+            <button id="close-modal" aria-label="Close project details" class="absolute top-4 right-4 w-10 h-10 glass rounded-full flex items-center justify-center z-10 hover:scale-105 transition-transform">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="p-6 md:p-12">
+                <span id="modal-category" class="text-xs font-bold text-accent uppercase tracking-wider"></span>
+                <h2 id="modal-title" class="text-3xl md:text-4xl font-display font-bold mt-2 mb-6"></h2>
+                
+                <div id="modal-preview"
+                    class="aspect-video rounded-2xl overflow-hidden mb-8 bg-gray-200 dark:bg-zinc-800">
+                    <img
+                        id="modal-main-image"
+                        src=""
+                        role="button"
+                        tabindex="0"
+                        class="w-full h-full object-cover cursor-pointer"
+                        alt="Project preview">
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Overview</h3>
+                        <p id="modal-overview" class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"></p>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase mb-1">Contribution</h4>
+                            <p id="modal-contribution" class="text-sm"></p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase mb-1">Tools Used</h4>
+                            <p id="modal-tools" class="text-sm"></p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase mb-1">Timeline</h4>
+                            <p id="modal-timeline" class="text-sm"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 mb-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Challenges</h3>
+                        <p id="modal-challenges" class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"></p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Solutions</h3>
+                        <p id="modal-solutions" class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"></p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Reflection</h3>
+                        <p id="modal-reflection" class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">Gallery</h3>
+                    <div
+                        id="modal-gallery"
+                        class="grid grid-cols-3 md:grid-cols-4 gap-3">
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 px-6 py-3 glass rounded-full font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a id="modal-demo" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 px-6 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent-dark transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" class="fixed inset-0 z-[95] hidden items-center justify-center p-4 bg-black/90 cursor-pointer" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Full-size preview" class="max-w-full max-h-full rounded-xl object-contain">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
