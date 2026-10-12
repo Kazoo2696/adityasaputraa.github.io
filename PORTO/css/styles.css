@@ -1,0 +1,231 @@
+:root {
+    --bg: #ffffff;
+    --text: #0a0a0a;
+    --card: #ffffff;
+    --border: rgba(0, 0, 0, 0.08);
+}
+.dark {
+    color-scheme: dark;
+    --bg: #121113;
+    --text: #f4f4f5;
+    --card: #1c1a1f;
+    --border: rgba(212, 212, 216, 0.14);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.065), transparent 32%),
+        radial-gradient(circle at 88% 78%, rgba(59, 130, 246, 0.04), transparent 30%);
+    background-attachment: fixed;
+}
+
+/* Glassmorphism */
+.glass {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.dark .glass {
+    background-color: rgba(28, 26, 31, 0.76);
+    border-color: rgba(212, 212, 216, 0.14);
+    box-shadow: 0 10px 30px -16px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.dark .text-gray-500 {
+    color: #94a3b8;
+}
+
+.dark .text-gray-400,
+.dark .text-gray-600 {
+    color: #a8b3c7;
+}
+
+.dark input::placeholder {
+    color: #7f8da3;
+}
+
+.dark input {
+    caret-color: #60a5fa;
+}
+
+.dark .text-accent {
+    color: #60a5fa;
+}
+
+.dark .bg-accent {
+    background-color: #3b82f6;
+}
+
+.dark .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.1);
+}
+
+.dark .bg-accent\/20 {
+    background-color: rgb(59 130 246 / 0.16);
+}
+
+.dark .hover\:bg-accent-dark:hover {
+    background-color: #2563eb;
+}
+
+.dark .border-accent,
+.dark .border-t-accent {
+    border-color: #3b82f6;
+}
+
+.dark .from-accent {
+    --tw-gradient-from: #60a5fa var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(96 165 250 / 0) var(--tw-gradient-to-position);
+}
+
+.dark .to-purple-500 {
+    --tw-gradient-to: #38bdf8 var(--tw-gradient-to-position);
+}
+
+.dark .text-purple-500 {
+    color: #60a5fa;
+}
+
+.dark .dark\:bg-purple-500\/20 {
+    background-color: rgb(59 130 246 / 0.12);
+}
+
+/* Gradient Text Animation */
+.animated-gradient {
+    background-size: 200% auto;
+    animation: gradientMove 4s linear infinite;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Floating Animation for Orbs */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Magnetic Button Base */
+.magnetic-btn {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+/* Card Hover Effect */
+.card-hover {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.card-hover:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.5);
+    z-index: 10;
+}
+
+.dark .card-hover:hover {
+    box-shadow: 0 22px 46px -18px rgba(59, 130, 246, 0.36);
+    border-color: rgba(96, 165, 250, 0.58);
+}
+
+.project-item {
+    cursor: default;
+}
+
+/* Skill Bar */
+.skill-bar-fill {
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =====================================
+   OPTIMIZED SLIDER STYLES
+   ===================================== */
+/* Kontainer Scroll Utama */
+.custom-scroll {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+    overflow-x: auto;
+    overflow-y: hidden;        
+    cursor: grab;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    display: none;             
+}
+
+.custom-scroll:active {
+    cursor: grabbing;
+}
+
+.custom-scroll.active {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Lintasan Kartu */
+.process-track {
+    display: flex;
+    width: max-content;
+    padding-top: 32px !important;    
+    padding-bottom: 32px !important; 
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.process-step > .glass {
+    border: 2px solid var(--process-border, #3b82f6);
+}
+
+.dark .process-step > .glass {
+    border-color: rgba(96, 165, 250, 0.62);
+    background-color: rgba(28, 26, 31, 0.84);
+}
+
+.dark #project-modal {
+    background-color: rgba(2, 6, 23, 0.78);
+}
+
+.dark #lightbox {
+    background-color: rgba(2, 6, 23, 0.94);
+}
+
+/* =====================================
+   SCROLL REVEAL ANIMATION
+   ===================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
